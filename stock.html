@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="common.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            $(".img1").click(function () {
+
+                $("#img1").fadeIn(1000);
+
+            });
+            $(".img1").hover(function () {
+                $("#img1").fadeIn(1000);
+            });
+            $(".img1").mouseleave(function () {
+                $(".#img1").css("display", "none");
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        #formm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .containerr {
+            margin-top: 50px;
+            width: 40vw;
+        }
+
+        .expense-form {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            height: 350px;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        .expense-list {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list-group-item button {
+            margin-left: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #e7f4fd;">
+        <div class="topnav">
+            <div class="logo">PORTFOLIO</div>
+            <div style="margin-left: 75PX;">
+                <a class="active" href="demo.html">Home</a>
+                <a href="stock.html">INDstocks</a>
+                <a href="mutualfund.html">Mutual Funds</a>
+                <!-- <a href="FD">Fixed Deposite</a> -->
+                <a href="sip.html">SIP</a>
+                <a href="expense.html">Expense</a>
+            </div>
+            <!-- <input type="text" placeholder="Search here.." style="border-bottom: 3px solid white;
+            border-bottom-left-radius: 10%;
+            border-bottom-right-radius: 10%; "> -->
+            <!-- <button type="submit"><img src="search-removebg-preview.png"
+          style="width: 20px;vertical-align: middle; height:20px;margin-bottom: 7px;"></button> -->
+          <div class="login" id="loginLink"><a href="login.html">Login</a></div>
+            <div class="profile"><a href="dashboard.html" class="ah">Profile</a></div>
+        </div>
+    </header>
+    <form id="regdata" action="/submit_stock_data" method="post" onsubmit="return validateForm()">
+    <div id="formm">
+        <div class="containerr">
+            <h1 class="text-center">Stock Valuation</h1>
+
+            <!-- Expense Input Form -->
+            <div class="expense-form">
+                <div class="form-group">
+                    <label for="expense-name">Stock Name:</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="expense-amount">Stock Amount:</label>
+                    <input type="number" id="amount" class="form-control">
+                </div>
+                </br>
+                <button class="btn btn-primary" onclick="stockregister()" id="add-expense"> Add stock</button>
+            </div>
+        </div>
+    </div>
+</form>
+    <!-- Expense List -->
+    <div class="expense-list">
+        <h2>Stock List</h2>
+        <ul id="expenses" class="list-group">
+            <!-- Expense items will be added here using JavaScript -->
+        </ul>
+    </div>
+    </div>
+    <div style="height: 50px; width: 100%;">
+
+    </div>
+
+    <div style="height: 50px; width: 100%;">
+
+    </div>
+
+    <!--description-->
+
+    <div class="about">
+        <div class="about_inner">
+
+            <div class="panel">
+                <div class="box1">
+                    <div class="headline">
+                        <h2>What is Stock advisory?</h2>
+                        <p>
+                            stock advisor will help you identify which investments should be used for retirement accounts and non-retirement accounts. The expert will issue a stock market advisory regarding where you should invest, the risks associated with each such investment, and the rate of return you can expect from your portfolio.
+                        </p>
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="headline"">
+                        <a href="https://youtu.be/PbldLCsspgE?si=jFSoXsgtCF48RET2"><img  width="500" height="296"  src="image/istockphoto.jpg" alt=""></a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="box1">
+                    <div class="headline"">
+                        <a href="https://youtu.be/PbldLCsspgE?si=jFSoXsgtCF48RET2"><img  width="500" height="296"  src="image/istockphoto-1412367772-612x612.jpg" alt=""></a>
+                        
+                    </div>
+                </div>
+                <div class="box1">
+                    <div class="headline">
+                        <h2>What is STOCK?</h2>
+                        <p>
+                            Plain and simple, stock is a share in the ownership of a company. Stock represents a claim on the company's assets and earnings. As you acquire more stock, your ownership stake in the company becomes greater. Whether you say shares, equity, or stock, it all means the same thing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <footer style="height:300px;width:100%;background-color:#0a0d4a; color:#ffffff;font-size: 20px;">
+            <div style="height:70%;width:100%; color: #ffffff;" class="foot">
+                <div class="col1">
+                    LOGO
+                </div>
+                <div class="col2">
+                    <div class="col2c">
+                        <span>Get started</span>
+                        <ul>
+                            <li>Home</li>
+                            <li>SignUp</li>
+                            <li>Downloads</li>
+                        </ul>
+                    </div>
+                    <div class="col2c">
+                        <span>About us</span>
+                        <ul>
+                            <li>Comapny Information</li>
+                            <li>Contact Us</li>
+                            <li>Reviews</li>
+                        </ul>
+                    </div>
+                    <div class="col2c">
+                        <span>Support</span>
+                        <ul>
+                            <li>FAQ</li>
+                            <li>Help Desk</li>
+                            <li>Forum</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col3">
+                    <i class="fa fa-twitter" style="font-size:35px;position:relative; top:30px;margin-left:50px;"></i>
+                    <i class="fa fa-facebook" style="font-size:35px;position:relative;top:30px;margin-left:10px;"></i>
+                    <i class="fa fa-google-plus"
+                        style="font-size:35px;position:relative;top:30px;margin-left:10px;"></i><br />
+                    <button type="button" class="conus">Contact Us</button>
+                </div>
+            </div>
+            <div class="copyright">
+                <i class="fa fa-copyright" aria-hidden="true" style="opacity:0.5;"></i><span
+                    style="margin-left:5px; opacity:0.5;">Copyright 2023-2030.</span><br />
+                <span style="opacity:0.5;">All rights reserved. Powered by the</span> <span
+                    style="font-weight:500; opacity:0.8;">Digital Platform</span>
+            </div>
+        </footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const expenses = [];
+
+            $('#add-expense').click(function () {
+                const expenseName = $('#expense-name').val();
+                const expenseAmount = parseFloat($('#expense-amount').val());
+
+                if (expenseName && !isNaN(expenseAmount)) {
+                    const expense = {
+                        name: expenseName,
+                        amount: expenseAmount,
+                    };
+                    expenses.push(expense);
+
+                    updateExpenseList();
+                    clearForm();
+                }
+            });
+
+            function updateExpenseList() {
+                const $expenses = $('#expenses');
+                $expenses.empty();
+
+                expenses.forEach((expense, index) => {
+                    $expenses.append(`
+                <li class="list-group-item">
+                    ${expense.name}:"  " ${expense.amount}
+                    <button class="btn btn-danger btn-sm float-right" data-index="${index}">Remove</button>
+                </li>
+            `);
+                });
+
+                // Add event listeners to remove expenses
+                $expenses.find('button').click(function () {
+                    const index = $(this).data('index');
+                    expenses.splice(index, 1);
+                    updateExpenseList();
+                });
+            }
+
+            function clearForm() {
+                $('#expense-name').val('');
+                $('#expense-amount').val('');
+            }
+        });
+
+ //database
+ function stockregister(event) {
+    event.preventDefault();  // Prevent the default form submission
+
+    // Extract form data
+    var regdata = document.getElementById("regdata");
+    var name = regdata.name.value;
+   var amount = regdata.amount.value;
+
+    // Log form data
+    console.log(name);
+    console.log(amount);
+
+    // Create an object for the form data
+    var formObject = {
+        name: name,
+        amount: amount
+    };
+
+    console.log("pass1");
+
+    // Make a POST request to the server
+    fetch('http://localhost:9090/registerStock', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject),
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Stock created successfully");
+        document.getElementById('name').value = '';
+        document.getElementById('amount').value = '';
+       
+        console.log(data);
+        // Handle the response if needed
+    })
+    
+}
+
+// Attach the function to the form's submit event
+document.getElementById("regdata").addEventListener("submit", stockregister);
+    </script>
+    <script>
+        // Check if 'yourKey' exists in session storage
+        var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+  
+        // Get the login link element
+        var loginLink = document.getElementById('loginLink');
+  
+        // Hide the login link if 'yourKey' exists
+        if (isLoggedIn) {
+            loginLink.style.display = 'none';
+        }
+    </script>
+</body>
